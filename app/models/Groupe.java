@@ -1,26 +1,29 @@
 package models;
 
-import com.avaje.ebean.Model;
 import play.data.validation.Constraints;
 
-import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import java.util.Date;
 
-import java.util.List;
-
-@Entity
-public class Groupe extends Model {
+/**
+ * Created by Tan-Vincent on 16/05/2016.
+ */
+public class Groupe {
 
     @Id
     public Long id;
 
-    @Constraints.Required
-    public String nom;
+    public String groupe;
 
     @ManyToOne
-    public Session session;
+    public User identifiant;
+
+    public String tuteur;
+
+    public String role;
+
+    public String remarque;
 
     //@OneToMany(mappedBy = "promotion")
     //public List<Session> sessions;
@@ -33,20 +36,34 @@ public class Groupe extends Model {
         this.id = id;
     }
 
-    public String getNom() {
-        return nom;
+    public String getGroupe() {
+        return groupe;
     }
-    public void setNom(int Nom) {
-        this.nom = nom;
+    public void setGroupe(String Groupe) {
+        this.groupe = groupe;
     }
 
-    public Session getSession(){ return session; }
-    public void setSession(Session session) { this.session = session; }
+    public User getIdentifiant(){ return identifiant; }
+    public void setIdentifiant(User identifiant) { this.identifiant = identifiant; }
 
-    //public List<Session> getSessions() { return sessions; }
-    //public void setSessions(List<Session> sessions) { this.sessions = sessions; }
+    public String getRemarque() {
+        return remarque;
+    }
+    public void setRemarque(String remarque) {
+        this.remarque = remarque;
+    }
 
+    public String getRole() {
+        return role;
+    }
+    public void setRole(String role) {
+        this.role = role;
+    }
 
-
-
+    public String getTuteur() {
+        return tuteur;
+    }
+    public void setTuteur(String tuteur) {
+        this.tuteur = tuteur;
+    }
 }
