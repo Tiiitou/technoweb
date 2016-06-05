@@ -2,13 +2,11 @@ package controllers;
 
 import play.mvc.*;
 import models.User;
+import models.Groupe;
 
 import views.html.*;
 
-/**
- * This controller contains an action to handle HTTP requests
- * to the application's home page.
- */.
+
 public class AccueilController extends Controller {
 
     /**
@@ -30,10 +28,16 @@ public class AccueilController extends Controller {
         userObj.email = "lbznoinzg@dfignp.com";
         userObj.save();
 
+        Groupe groupeObj = new Groupe();
+        groupeObj.identifiant = userObj;
+        groupeObj.tuteur = "zpfnepf";
+        groupeObj.role =  "fesfsd";
+        groupeObj.remarque = "ozbeog zerohgerihg erphgidpihgp";
+        groupeObj.groupe = "G6C";
+        groupeObj.save();
 
 
-
-        String test = "";
+                String test = "";
 
         return ok(accueil.render(test));
     }

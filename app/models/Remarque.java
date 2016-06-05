@@ -1,15 +1,18 @@
 package models;
 
+import com.avaje.ebean.Model;
 import play.data.validation.Constraints;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import java.util.Date;
+import javax.persistence.OneToMany;
 
-/**
- * Created by Tan-Vincent on 16/05/2016.
- */
-public class Remarque {
+import java.sql.Date;
+import java.util.List;
+
+@Entity
+public class Remarque extends Model {
 
     @Id
     public Long id;

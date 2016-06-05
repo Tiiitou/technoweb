@@ -1,7 +1,10 @@
 package models;
 
 import play.data.validation.Constraints;
+import com.avaje.ebean.Model;
+import play.data.validation.Constraints;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import java.util.Date;
@@ -9,7 +12,8 @@ import java.util.Date;
 /**
  * Created by Tan-Vincent on 16/05/2016.
  */
-public class Groupe {
+@Entity
+public class Groupe extends Model {
 
     @Id
     public Long id;
